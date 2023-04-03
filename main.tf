@@ -4,23 +4,23 @@ provider "aws" {
 }
 
 ## AWS instance creation.
-#
-#resource "aws_key_pair" "aws_key_pair" {
-#  key_name	= "kriston-quest-tf"
-#  public_key	= "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCFC9ldp6UD5CDO6qIK/rSdube9X+VXtmxr23HQDo9rNBnwEnMWt8I1XxILpCuq4R1HTmpEVOFmiJqof+swvEHRoDqoqaSd7pt/BAYIMQOQiGUqsVsG3o235dQWPnPoi2L9mSbGRB/eJDgyFYiQ1BuG/XgQuYoEELfS4Q2L+tSS8GoVRdmjHpI3GpboELSvhqlDMbQjxLY3zrHO5Etevxjohtvfd25gTEebemBXw8/RN+tXnQNtpTQOY4x/MK5vl48rMhO1Kcb89XrRR5SGwMVi1d0pwo8ljmNDp7M97us3zyx7Loc1s7iXzonGki1cJY66WyPBahM5nxNwGOjGVbiH"
-#}
-#
-#
-#resource "aws_instance" "quest" {
-#  ami           = "ami-005f9685cb30f234b"
-#  instance_type = "t2.micro"
-#  subnet_id	= "subnet-0b2fc95ec093421be"
-#  key_name	= "kriston-quest-tf"
-#
-#  tags = {
-#    Name = "quest server"
-#  }    
-#}
+
+resource "aws_key_pair" "aws_key_pair" {
+  key_name	= "kriston-quest-tf"
+  public_key	= "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCFC9ldp6UD5CDO6qIK/rSdube9X+VXtmxr23HQDo9rNBnwEnMWt8I1XxILpCuq4R1HTmpEVOFmiJqof+swvEHRoDqoqaSd7pt/BAYIMQOQiGUqsVsG3o235dQWPnPoi2L9mSbGRB/eJDgyFYiQ1BuG/XgQuYoEELfS4Q2L+tSS8GoVRdmjHpI3GpboELSvhqlDMbQjxLY3zrHO5Etevxjohtvfd25gTEebemBXw8/RN+tXnQNtpTQOY4x/MK5vl48rMhO1Kcb89XrRR5SGwMVi1d0pwo8ljmNDp7M97us3zyx7Loc1s7iXzonGki1cJY66WyPBahM5nxNwGOjGVbiH"
+}
+
+
+resource "aws_instance" "quest" {
+  ami           = "ami-005f9685cb30f234b"
+  instance_type = "t2.micro"
+  subnet_id	= "subnet-0b2fc95ec093421be"
+  key_name	= "kriston-quest-tf"
+
+  tags = {
+    Name = "quest server"
+  }    
+}
 
 
 ## AWS ECR Docker repository creation.
